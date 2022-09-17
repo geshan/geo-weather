@@ -29,7 +29,7 @@ const Weather = () => {
       <div className="stories-wrapper">
         {weather && weather.temp &&
           <div className='weather-desc'>
-            <h3>Weather: Temprature is {weather.temp}, min temp: {weather.min_temp}, max temp: {weather.max_temp} </h3>
+            <h3>Weather in {weather.city} : Temprature is {weather.temp}, min temp: {weather.min_temp}, max temp: {weather.max_temp} </h3>
           </div>                        
         }
       </div>

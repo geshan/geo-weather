@@ -3,7 +3,7 @@ export async function onRequestGet(request) {
   const city = request.cf?.city || 'sydney';
   const fallback = !request.cf?.city;
   const url = `https://api.api-ninjas.com/v1/weather?city=${city}`;
-  const res = await fetch(url, {headers: {'X-Api-Key': 'e0PrGIEcqVy8ywWd5XEOMg==vyh1d0tp3aGh2q3T'}});
+  const res = await fetch(url, {headers: {'X-Api-Key': request.env.API_NINJA_KEY}});
   const data = await res.json();
   const response = {
     temp: data.temp,

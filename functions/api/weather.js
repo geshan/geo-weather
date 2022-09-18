@@ -12,7 +12,7 @@ export async function onRequestGet(context) {
   const city = request.cf?.city || 'sydney';
   const fallback = !request.cf?.city;
   let url = `https://api.api-ninjas.com/v1/weather?city=${city.toLowerCase()}`;
-  if (!fallback && request.cf?.latitude) {
+  if (fallback && request.cf?.latitude) {
     url = `https://api.api-ninjas.com/v1/weather?lat=${request.cf.latitude}&lon=${request.cf.longitude}`;
   }
   const res = await fetch(url, {headers: {'X-Api-Key': env.API_NINJA_KEY}});

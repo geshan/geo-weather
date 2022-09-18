@@ -23,13 +23,13 @@ const Weather = () => {
 
   return (
     <div className="wrapper">
-      <h2>Current weather</h2>
+      <h2>Your Current weather</h2>
       {loading && <div>Your weather is loading...</div>}
       {error && <div>{`Problem fetching the weather data - ${error}`}</div>}
       <div className="stories-wrapper">
         {weather && weather.temp &&
           <div className='weather-desc'>
-            <h3>Weather in {weather.city} : Temprature is {weather.temp}, min temp: {weather.min_temp}, max temp: {weather.max_temp} </h3>
+            <h3>Weather in {weather.fallback? 'unknown' : weather.city}, {weather.country} : Temprature is {weather.temp}, min temp: {weather.min_temp}, max temp: {weather.max_temp} </h3>
           </div>                        
         }
       </div>

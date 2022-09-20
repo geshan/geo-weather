@@ -17,8 +17,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:cf": "npx wrangler pages dev ./build",
-    "build:watch": "run-when-changed --watch \"src/*.js\" --exec \"npm run build\"",
-    "start:dev": "concurrently \"npm run build:watch\" \"npm run start:cf\""
+    "build:watch": "run-when-changed --watch 'src/*.js' --exec 'npm run build'",
+    "start:dev": "concurrently 'npm run build:watch' 'npm run start:cf'"
   },
   "eslintConfig": {
     "extends": [
